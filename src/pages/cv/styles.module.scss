@@ -16,8 +16,6 @@ $sideMargin: 160px;
   left: 0;
   z-index: -1;
 
-  background: no-repeat top/cover url("../../assets/img/bg.png");
-
   -webkit-filter: blur(180px);
   -moz-filter: blur(180px);
   -o-filter: blur(180px);
@@ -94,7 +92,6 @@ $sideMargin: 160px;
     z-index: 1;
 
     &.art-andrew {
-      background: url("../../assets/img/andrew.png") center/contain no-repeat;
       right: 0;
       top: 14%;
       bottom: 8%;
@@ -102,7 +99,6 @@ $sideMargin: 160px;
     }
 
     &.art-sonya {
-      background: url("../../assets/img/sonya.png") center/contain no-repeat;
       right: 0;
       top: 14%;
       bottom: 0;
@@ -133,7 +129,6 @@ $sideMargin: 160px;
     height: 320px;
     left: 60%;
     z-index: 1;
-    background: url("../../assets/img/lamp.png") right center / contain no-repeat;
   }
 }
 
@@ -173,24 +168,18 @@ $sideMargin: 160px;
     z-index: 1;
 
     &.art-0 {
-      background: url("../../assets/img/planet.png") right bottom / contain no-repeat;
-
       @media all and (max-width: 1180px) {
         display: none;
       }
     }
 
     &.art-1 {
-      background: url("../../assets/img/planet-1.png") right bottom / contain no-repeat;
-
       @media all and (max-width: 1390px) {
         display: none;
       }
     }
 
     &.art-2 {
-      background: url("../../assets/img/planet-2.png") right bottom / contain no-repeat;
-
       @media all and (max-width: 1500px) {
         display: none;
       }

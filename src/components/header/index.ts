@@ -13,7 +13,7 @@ export class CardsList extends LitElement {
         return html`
             <div class="header-wrapper">
                 ${!this.secondary ? html`
-                    <h2 class="header-subtext">${this.subtext}</h2>
+                    <h3 class="header-subtext">${this.subtext}</h3>
                     <h1 class="header-text">${this.text}</h1>
                 ` : html`
                     <h3 class="header-subtext">${this.subtext}</h3>

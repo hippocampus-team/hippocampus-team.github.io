@@ -1,8 +1,15 @@
-import { html, LitElement, TemplateResult } from "lit";
+import { css, CSSResultGroup, html, LitElement, TemplateResult, unsafeCSS } from "lit";
 import { customElement, state } from "lit/decorators.js";
 import { pageStyles } from "~src/global";
 import scopedStyles from "./styles.module.scss";
 import { baseUrl, CV, fetchContent } from "~src/data-service";
+import bgImage from "~src/assets/img/bg.png";
+import artAndrewImage from "~src/assets/img/andrew.png";
+import artSonyaImage from "~src/assets/img/sonya.png";
+import lampImage from "~src/assets/img/lamp.png";
+import planet0Image from "~src/assets/img/planet.png";
+import planet1Image from "~src/assets/img/planet-1.png";
+import planet2Image from "~src/assets/img/planet-2.png";
 
 import("~components/button").then(f => f.default());
 import("~components/header").then(f => f.default());
@@ -113,7 +120,35 @@ export default class CVPage extends LitElement {
         scroller.scrollTo({ left: 0, top: window.innerHeight - 120, behavior: "smooth" });
     }
 
-    static get styles(): CSSStyleSheet[] {
-        return [...pageStyles, scopedStyles as never];
+    static get styles(): CSSResultGroup {
+        return [...pageStyles, scopedStyles as never, css`
+          .app-bg {
+            background: no-repeat top/cover url(${unsafeCSS(bgImage)});
+          }
+          
+          .art-andrew {
+            background: url(${unsafeCSS(artAndrewImage)}) center/contain no-repeat;
+          }
+          
+          .art-sonya {
+            background: url(${unsafeCSS(artSonyaImage)}) center/contain no-repeat;
+          }
+
+          .cards-section .art {
+            background: url(${unsafeCSS(lampImage)}) right center / contain no-repeat;
+          }
+          
+          .art-0 {
+            background: url(${unsafeCSS(planet0Image)}) right bottom / contain no-repeat;
+          }
+
+          .art-1 {
+            background: url(${unsafeCSS(planet1Image)}) right bottom / contain no-repeat;
+          }
+
+          .art-2 {
+            background: url(${unsafeCSS(planet2Image)}) right bottom / contain no-repeat;
+          }
+        `];
     }
 }
