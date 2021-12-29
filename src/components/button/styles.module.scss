@@ -1,0 +1,55 @@
+@use "../../assets/styles/global";
+
+:global c-button {
+  display: block;
+
+  .button-wrapper {
+    width: fit-content;
+    height: 52px;
+
+    @include global.transition(transform 200ms ease, box-shadow 200ms ease);
+    background-color: global.$primaryColor;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 26px;
+
+    padding: 16px 20px 16px 14px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .button-icon {
+      margin-right: 4px;
+      color: global.$onPrimaryColor;
+    }
+
+    .button-text {
+      margin-left: 6px;
+      transform: translateY(-1px);
+      text-align: left;
+      vertical-align: middle;
+      font-weight: bold;
+      color: global.$onPrimaryColor;
+    }
+
+    &.button-secondary {
+      background-color: global.$surfaceColor;
+
+      .button-icon {
+        color: global.$lightInkColor;
+      }
+
+      .button-text {
+        color: global.$lightInkColor;
+      }
+    }
+  }
+}
