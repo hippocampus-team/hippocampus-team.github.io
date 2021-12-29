@@ -1,5 +1,4 @@
 import { LitElement, PropertyValues } from 'lit-element';
-import { render } from "lit-html";
 import '@boulevard/vampire';
 
 /**
@@ -19,22 +18,6 @@ export abstract class LightCustomElement extends LitElement implements CustomEle
 		new Promise((r) => setTimeout(r, 0)).then(() => {
 			if (this.onRenderedCallback) this.onRenderedCallback();
 		});
-	}
-}
-
-export abstract class SlotCustomElement extends LightCustomElement {
-	static render = render;
-
-	createRenderRoot() {
-		return document.createElement('v-root');
-	}
-
-	connectedCallback() {
-		if (!this.renderRoot.parentElement) {
-			this.appendChild(this.renderRoot);
-		}
-
-		super.connectedCallback();
 	}
 }
 
