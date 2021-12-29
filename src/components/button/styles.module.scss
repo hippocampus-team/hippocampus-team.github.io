@@ -1,6 +1,6 @@
 @use "../../assets/styles/global";
 
-:global c-button {
+:host {
   display: block;
 
   .button-wrapper {

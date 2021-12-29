@@ -1,6 +1,6 @@
 @use "../../assets/styles/global";
 
-:global c-cards-list {
+:host {
   display: block;
   position: relative;
 

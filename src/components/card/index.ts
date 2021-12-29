@@ -1,45 +1,34 @@
-import { html, property, customElement } from 'lit-element';
-import { CustomElement, LightCustomElement } from "../base";
-import styles from "./styles.module.scss";
-import "~c/button"
+import { LitElement, CSSResultGroup, html } from "lit";
+import { property } from "lit/decorators.js";
+import scopedStyles from "./styles.module.scss";
+import { componentStyles, defineComponent } from "~src/global";
+import { Project } from "~src/data-service";
 
-@customElement("c-card")
-export class CardElement extends LightCustomElement implements Card {
-	@property({type: String}) title : string = "";
-	@property({type: String}) text : string = "";
-	@property({type: Array}) buttons : CardButton[] = [];
+import("~components/button").then(f => f.default());
 
-	render() { return html`
-		<div class="card-wrapper">
-			<h4 class="card-title">${this.title}</h4>
-			<p class="card-text">${this.text}</p>
-			
-			${this.buttons.length == 0 ? html`` : html`
-				<div class="card-buttons-wrapper">
-					${this.buttons.map(button => html`
-						<c-button class="card-button"
-								  text="${button.text}"
-								  link="${button.link}"></c-button>
-					`)}
-				</div>
-			`}
-		</div>`;
-	}
+export default (): void => defineComponent("c-card", Card);
+export class Card extends LitElement {
+    @property({ type: Object }) content!: Project;
 
-	static get styles() {
-		return <any>styles;
-	}
-}
+    render() {
+        return html`
+            <div class="card-wrapper">
+                <h4 class="card-title">${this.content.title}</h4>
+                <p class="card-text">${this.content.text}</p>
 
-export interface Card extends CustomElement, CardPayload { }
+                ${this.content.buttons.length === 0 ? html`` : html`
+                    <div class="card-buttons-wrapper">
+                        ${this.content.buttons.map(link => html`
+                            <c-button class="card-button"
+                                      text="${link.text}"
+                                      link="${link.link}"></c-button>
+                        `)}
+                    </div>
+                `}
+            </div>`;
+    }
 
-export interface CardPayload {
-	title : string;
-	text : string;
-	buttons : CardButton[];
-}
-
-export interface CardButton {
-	text : string;
-	link : string;
+    static get styles(): CSSResultGroup {
+        return [...componentStyles, scopedStyles as never];
+    }
 }

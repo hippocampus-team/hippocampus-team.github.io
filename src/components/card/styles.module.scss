@@ -1,6 +1,6 @@
 @use "../../assets/styles/global";
 
-:global c-card {
+:host {
   display: block;
 
   // Possible effect here

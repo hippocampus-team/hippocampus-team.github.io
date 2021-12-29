@@ -6,7 +6,7 @@
     "build": "npm run-script lint && webpack --config webpack.prod.js",
     "build:stats": "npm run-script lint && webpack --config webpack.prod.js --profile --json > stats.json",
     "start:dev": "webpack serve --hot --config webpack.dev.js",
-    "lint": "eslint --fix ./src && npx stylelint \"**/*.(s)?css\""
+    "lint": "eslint --fix ./src"
   },
   "sideEffects": [
     "*.scss",

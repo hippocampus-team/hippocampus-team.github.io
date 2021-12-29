@@ -10,8 +10,6 @@ $dividerColor: rgba(#000000, 0.12);
 $defaultRadius: 44px;
 
 @import "./reset";
-@import url(https://fonts.googleapis.com/css?family=Material+Icons+Round);
-@import url(https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600&family=Rubik:wght@700&display=swap);
 
 @mixin inherit-size() {
   width: inherit;

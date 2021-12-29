@@ -41,13 +41,10 @@ $sideMargin: 160px;
   top: 0;
 
   background-color: global.$backgroundColor;
-  display: none;
 
-  &.shown {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hello-section {
@@ -128,9 +125,9 @@ $sideMargin: 160px;
     margin-top: 4px;
   }
 
-  c-cards-list {
-    margin-bottom: 56px;
-  }
+  //c-cards-list {
+  //  margin-bottom: 56px;
+  //}
 
   .art {
     position: absolute;

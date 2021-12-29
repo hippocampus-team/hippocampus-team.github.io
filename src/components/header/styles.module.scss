@@ -1,6 +1,6 @@
 @use "../../assets/styles/global";
 
-:global c-header {
+:host {
   display: block;
 
   .header-subtext {
