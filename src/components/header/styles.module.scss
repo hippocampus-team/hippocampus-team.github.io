@@ -1,9 +1,0 @@
-@use "../../assets/styles/global";
-
-:host {
-  display: block;
-
-  .header-subtext {
-    color: global.$lightInkColor;
-  }
-}
